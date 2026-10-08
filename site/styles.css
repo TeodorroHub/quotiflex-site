@@ -258,7 +258,7 @@ h3, .benefits h2 { font-size: 21px; letter-spacing: -.025em; line-height: 1.3; m
 .sidebar small { font-size: 8px; letter-spacing: .1em; color: var(--muted); margin: 10px 0 0; }
 .sidebar > span { display: flex; align-items: center; gap: 8px; padding: 7px; white-space: nowrap; }
 .sidebar > span .ico { width: 11px; height: 11px; stroke-width: 2.2; }
-.sidebar .selected { background: #d7ebff; color: #007bff; border-radius: 6px; }
+.sidebar .selected { background: #d7ebff; color: #0060d0; border-radius: 6px; }
 .sidebar-bottom { margin-top: auto; font-size: 8px; color: #8091b0; }
 .workspace { min-width: 0; }
 .app-toolbar {
