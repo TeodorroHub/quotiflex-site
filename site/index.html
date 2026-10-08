@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src https://formspree.io; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Quotiflex — Flexible and Precise</title>
+<meta name="description" content="Flexible product configuration, precise pricing and clear quote workflows for modern manufacturers.">
+<meta name="theme-color" content="#f0f6ff">
+<link rel="canonical" href="https://quotiflex.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quotiflex">
+<meta property="og:title" content="Quotiflex — Flexible quotes. Precise results.">
+<meta property="og:description" content="Flexible product configuration, precise pricing and clear quote workflows for modern manufacturers.">
+<meta property="og:url" content="https://quotiflex.com/">
+<meta property="og:image" content="https://quotiflex.com/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Quotiflex logo with the tagline Flexible and Precise">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" href="fonts/InterVariable-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js"></script>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 2.5 4.5 13.5h6.5l-1 8 9-11h-6.5l1-8Z"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1.2" class="solid"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M3.5 7h9M17.5 7h3M3.5 17h3M11.5 17h9"/><circle cx="15" cy="7" r="2.5"/><circle cx="9" cy="17" r="2.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.8 4.5 5.6v5.9c0 4.7 3.1 8.2 7.5 9.7 4.4-1.5 7.5-5 7.5-9.7V5.6L12 2.8Z"/><path d="m8.8 12 2.2 2.2 4.2-4.4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M15.5 4.8a3.5 3.5 0 0 1 0 6.4M17.8 14.9c2 .8 3.3 2.5 3.7 5.1"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></symbol>
+  <symbol id="i-arrow-out" viewBox="0 0 24 24"><path d="M7 17 17 7M8.5 7H17v8.5"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 7v10M7.5 12.5 12 17l4.5-4.5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5.5 12.5 4 4 9-9"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="3.5" width="11" height="17" rx="1.5"/><path d="M15 9.5h3.5a1.5 1.5 0 0 1 1.5 1.5v9.5M8 8h3M8 12h3M8 16h3"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<header class="header">
+  <a class="brand" href="#main" aria-label="Quotiflex, to the top of the page">
+    <picture>
+      <source type="image/webp" srcset="img/logo-450.webp 450w, img/logo-760.webp 760w" sizes="225px">
+      <img src="img/logo-450.png" width="225" height="73" alt="Quotiflex — Flexible and Precise">
+    </picture>
+  </a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">
+    <svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg><span class="visually-hidden">Open menu</span>
+  </button>
+  <nav id="navigation" aria-label="Main navigation">
+    <a href="#product">Product</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#features">Features</a>
+    <a href="#about">About</a>
+  </nav>
+  <div class="header-actions">
+    <a class="button ghost" href="https://app.quotiflex.com/">Sign in</a>
+    <a class="button" href="#contact">Book a demo <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow">CPQ for modern manufacturers</p>
+      <h1 id="hero-title">Flexible quotes.<br><span class="gradient">Precise results.</span></h1>
+      <p class="lead">Bring product configuration, pricing and approvals together. Create clear commercial proposals with flexibility at every step.</p>
+      <div class="actions">
+        <a class="button" href="#contact">Book a demo <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="button glass-button" href="#product"><span class="ring" aria-hidden="true"><svg class="ico"><use href="#i-arrow-down"/></svg></span> Explore the product</a>
+      </div>
+      <p class="fine">Configure. Price. Quote. With clarity.</p>
+    </div>
+    <div class="product-stage">
+      <div class="orbit" aria-hidden="true"></div>
+      <div class="app-window glass" role="img" aria-label="Illustrative Quotiflex quote screen with sample data: quote Q-2026-25 for Malar Valley Greenhouses, 896,809.02 SEK, revision A, with the steps Prepare, Approve and Present done and Revise in progress.">
+        <div class="window-top" aria-hidden="true">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span>Quotiflex · Quote workspace</span>
+          <span class="mini-pill">CPQ</span>
+        </div>
+        <div class="app-body" aria-hidden="true">
+          <div class="sidebar">
+            <strong>Quotiflex</strong>
+            <small>SALES MANAGER</small>
+            <span><svg class="ico"><use href="#i-grid"/></svg>Overview</span>
+            <span class="selected"><svg class="ico"><use href="#i-doc"/></svg>My quotes</span>
+            <span><svg class="ico"><use href="#i-building"/></svg>Accounts</span>
+            <span><svg class="ico"><use href="#i-box"/></svg>Catalogue</span>
+            <div class="sidebar-bottom">Flexible and Precise</div>
+          </div>
+          <div class="workspace">
+            <div class="app-toolbar">
+              <span>My quotes <b> / </b> Spring programme</span>
+              <span class="avatar">ML</span>
+            </div>
+            <div class="quote-card">
+              <div>
+                <span class="tiny">COMMERCIAL PROPOSAL</span>
+                <span class="quote-number">Q-2026-25 <span class="badge">Rev A</span></span>
+                <p>Malar Valley Greenhouses · SEK</p>
+              </div>
+              <div class="quote-value">
+                <span class="tiny">QUOTE VALUE</span>
+                <strong>896,809.02 <small>SEK</small></strong>
+              </div>
+            </div>
+            <div class="workflow">
+              <span class="done"><b><svg class="ico"><use href="#i-check"/></svg></b>Prepare</span>
+              <span class="done"><b><svg class="ico"><use href="#i-check"/></svg></b>Approve</span>
+              <span class="done"><b><svg class="ico"><use href="#i-check"/></svg></b>Present</span>
+              <span class="active"><b>4</b>Revise</span>
+              <span><b>5</b>Acknowledge</span>
+            </div>
+            <div class="quote-grid">
+              <div class="lines">
+                <span class="panel-title">Quote lines <span>· Rev A</span></span>
+                <div class="table-scroll">
+                  <table>
+                    <thead><tr><th>DESCRIPTION</th><th>QTY</th><th>DISC.</th><th>TOTAL · SEK</th></tr></thead>
+                    <tbody><tr><td><strong>Tray packer</strong><small>24 trays per minute · TP-24</small></td><td>1</td><td>3%</td><td>896,809.02</td></tr></tbody>
+                  </table>
+                </div>
+                <div class="line-summary"><span>Configuration connected to pricing</span><b><svg class="ico"><use href="#i-check"/></svg></b></div>
+              </div>
+              <div class="commercial">
+                <span class="panel-title">Commercial</span>
+                <p>Currency <b>SEK</b></p>
+                <p>Exchange rate <b>11.30</b></p>
+                <p>Version <b>Rev A</b></p>
+                <span class="badge green">Approval tracked</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="illustration-note">Illustrative product view · sample quote data</p>
+    </div>
+  </section>
+
+  <section class="benefits wrap" aria-label="Benefits">
+    <article class="glass">
+      <span class="icon" aria-hidden="true"><svg class="ico"><use href="#i-bolt"/></svg></span>
+      <h2>Faster quoting</h2>
+      <p>Move from product requirements to a structured commercial proposal.</p>
+    </article>
+    <article class="glass">
+      <span class="icon" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg></span>
+      <h2>Margin visibility</h2>
+      <p>Keep pricing, discounts and commercial decisions in view.</p>
+    </article>
+    <article class="glass">
+      <span class="icon" aria-hidden="true"><svg class="ico"><use href="#i-sliders"/></svg></span>
+      <h2>Full flexibility</h2>
+      <p>Shape products, pricing and workflows around your business.</p>
+    </article>
+    <article class="glass">
+      <span class="icon" aria-hidden="true"><svg class="ico"><use href="#i-shield"/></svg></span>
+      <h2>Better collaboration</h2>
+      <p>Give sales, engineering and finance a shared quote workspace.</p>
+    </article>
+  </section>
+
+  <section id="product" class="split wrap section" aria-labelledby="product-title">
+    <div>
+      <p class="eyebrow">Built for complex products</p>
+      <h2 id="product-title">From configuration<br>to <span class="gradient">confident decisions.</span></h2>
+      <p class="lead">One connected flow for the details that make each quote unique: product choices, commercial terms and the people who approve them.</p>
+      <ul class="check-list">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Product configuration and quote lines</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Pricing, currencies and discount visibility</li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Approvals, revisions and proposal workflow</li>
+      </ul>
+      <a class="text-link" href="#features">Discover the capabilities <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="collaboration glass">
+      <picture>
+        <source type="image/webp" srcset="img/team-600.webp 600w, img/team-800.webp 800w, img/team-1200.webp 1200w" sizes="(min-width: 1150px) 585px, (min-width: 850px) 45vw, calc(100vw - 56px)">
+        <img class="team-photo" src="img/team-1200.jpg" width="1200" height="490" loading="lazy" decoding="async" alt="Four colleagues in a bright office lean over a laptop and review a proposal together.">
+      </picture>
+      <div class="team-caption">
+        <span class="icon small" aria-hidden="true"><svg class="ico"><use href="#i-users"/></svg></span>
+        <div>
+          <strong>One proposal. A shared perspective.</strong>
+          <p>Connect commercial and technical conversations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="wrap section" aria-labelledby="features-title">
+    <div class="section-heading">
+      <p class="eyebrow">A clear path from idea to offer</p>
+      <h2 id="features-title">Every detail connected.<br><span class="gradient">Every step visible.</span></h2>
+      <p>Keep the proposal moving without losing the decisions behind it.</p>
+    </div>
+    <div class="feature-grid">
+      <article class="glass feature">
+        <span class="feature-number">01 / CONFIGURE</span>
+        <h3>Make complexity manageable.</h3>
+        <p>Bring product selections and requirements into structured quote lines, with a clear view of what you are offering.</p>
+        <div class="configuration-visual">
+          <span>Product family <b>Packaging equipment</b></span>
+          <span>Model <b>TP-24</b></span>
+          <span>Capacity <b>24 trays / min</b></span>
+          <div><i aria-hidden="true"></i> Configuration captured</div>
+        </div>
+      </article>
+      <article class="glass feature">
+        <span class="feature-number">02 / PRICE</span>
+        <h3>See the commercial picture.</h3>
+        <p>Keep the relationship between prices, discounts and currencies clear throughout the proposal.</p>
+        <div class="price-visual">
+          <span>List price <b>81,818.18 EUR</b></span>
+          <span>Discount <b>3.00%</b></span>
+          <hr>
+          <span class="total">Quote price <b>79,363.63 EUR</b></span>
+          <small>Illustrative figures</small>
+        </div>
+      </article>
+      <article class="glass feature">
+        <span class="feature-number">03 / QUOTE</span>
+        <h3>Move forward together.</h3>
+        <p>Follow the proposal from preparation and approval through presentation, revision and acknowledgement.</p>
+        <div class="approval-visual">
+          <span><b aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></b> Prepare <small>Quote structured</small></span>
+          <span><b aria-hidden="true"><svg class="ico"><use href="#i-check"/></svg></b> Approve <small>Decision recorded</small></span>
+          <span><b aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></b> Present <small>Ready to discuss</small></span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="solutions" class="solutions section" aria-labelledby="solutions-title">
+    <div class="wrap">
+      <div class="section-heading">
+        <p class="eyebrow">Made for the way you work</p>
+        <h2 id="solutions-title">Different perspectives.<br><span class="gradient">One clear proposal.</span></h2>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Team roles">
+        <button type="button" role="tab" id="tab-sales" aria-selected="true" aria-controls="role-panel" data-role="sales">Sales</button>
+        <button type="button" role="tab" id="tab-engineering" aria-selected="false" aria-controls="role-panel" tabindex="-1" data-role="engineering">Engineering</button>
+        <button type="button" role="tab" id="tab-finance" aria-selected="false" aria-controls="role-panel" tabindex="-1" data-role="finance">Finance</button>
+      </div>
+      <div id="role-panel" class="role-panel glass" role="tabpanel" aria-labelledby="tab-sales" tabindex="0">
+        <div>
+          <p class="eyebrow" id="role-label">For sales teams</p>
+          <h3 id="role-title">Keep the customer conversation moving.</h3>
+          <p id="role-description">Build a clear proposal around the customer’s requirements. Keep versions, commercial terms and the next step in one place.</p>
+          <a class="text-link" href="#contact">Discuss your workflow <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <ul id="role-points" class="check-list">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Structured proposals</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Clear commercial terms</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg>Visible quote progress</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="wrap section about" aria-labelledby="about-title">
+    <p class="eyebrow">The Quotiflex approach</p>
+    <h2 id="about-title">Flexibility where it matters.<br><span class="gradient">Precision where it counts.</span></h2>
+    <p class="lead">Complex products call for adaptable tools. Quotiflex brings structure to quoting while leaving room for the product choices, commercial requirements and workflows that make your business different.</p>
+    <ul class="principles">
+      <li>Product clarity</li>
+      <li>Commercial control</li>
+      <li>Connected teams</li>
+    </ul>
+  </section>
+
+  <section class="wrap section faq" aria-labelledby="faq-title">
+    <div>
+      <p class="eyebrow">A few useful answers</p>
+      <h2 id="faq-title">Before we talk.</h2>
+    </div>
+    <div>
+      <details>
+        <summary>What does CPQ mean?</summary>
+        <p>CPQ stands for Configure, Price, Quote: turning product requirements and commercial terms into a structured customer proposal.</p>
+      </details>
+      <details>
+        <summary>Can I access the Quotiflex application?</summary>
+        <p>Existing users can open the application with the Sign in button. To discuss access and your requirements, use the demo request below.</p>
+      </details>
+      <details>
+        <summary>What should we cover in a demo?</summary>
+        <p>Your product structure, pricing approach, approval process and how your team creates and revises proposals today.</p>
+      </details>
+      <details>
+        <summary>How is pricing determined?</summary>
+        <p>Talk to us: discuss your requirements with the Quotiflex team. This site does not publish a standard price list.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="contact" class="wrap section" aria-labelledby="contact-title">
+    <div class="contact glass">
+      <div>
+        <p class="eyebrow">Let’s make quoting clearer</p>
+        <h2 id="contact-title">Your products.<br> Your process.<br> <span class="gradient">Your next step.</span></h2>
+        <p>Tell us about your business and the quoting challenges you would like to explore.</p>
+        <a class="text-link" href="https://app.quotiflex.com/">Already using Quotiflex? Sign in <svg class="ico" aria-hidden="true"><use href="#i-arrow-out"/></svg></a>
+      </div>
+      <form id="demo-form" novalidate aria-labelledby="form-title">
+        <h3 id="form-title">Request a product conversation</h3>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" autocomplete="name" required maxlength="100" aria-describedby="e-name">
+            <p class="field-error" id="e-name" hidden>Please enter your name.</p>
+          </div>
+          <div class="field">
+            <label for="f-email">Work email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="200" aria-describedby="e-email">
+            <p class="field-error" id="e-email" hidden>Please enter a valid email address.</p>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-company">Company</label>
+            <input id="f-company" name="company" autocomplete="organization" required maxlength="200" aria-describedby="e-company">
+            <p class="field-error" id="e-company" hidden>Please enter your company.</p>
+          </div>
+          <div class="field">
+            <label for="f-time">Preferred time <span class="optional">(optional)</span></label>
+            <input id="f-time" name="preferred_time" maxlength="120" placeholder="For example: weekday mornings, CET">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-message">What would you like to explore?</label>
+          <textarea id="f-message" name="message" rows="3" maxlength="3000" required aria-describedby="e-message" placeholder="Products, pricing, approvals, or your current quoting process…"></textarea>
+          <p class="field-error" id="e-message" hidden>Please tell us briefly what you would like to explore.</p>
+        </div>
+        <div class="honeypot" aria-hidden="true">
+          <label for="f-gotcha">Leave this field empty</label>
+          <input id="f-gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+        <p class="form-note" id="privacy"><strong>Privacy.</strong> LinkPort Systems s.r.o., Prague, Czech Republic, is the controller of what you send with this form and uses it only to answer your request. The form reaches us through Formspree, which processes it on our behalf. Nothing else is collected: this site sets no cookies and has no analytics or trackers.</p>
+        <button class="button" type="submit" disabled>Send request <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        <p id="form-status" class="status" role="status" aria-live="polite"></p>
+        <noscript><p class="status is-error">This form needs JavaScript to send. Please turn it on and reload the page.</p></noscript>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="footer-top">
+    <a class="brand" href="#main" aria-label="Quotiflex, to the top of the page">
+      <picture>
+        <source type="image/webp" srcset="img/logo-450.webp 450w, img/logo-760.webp 760w" sizes="180px">
+        <img src="img/logo-450.png" width="180" height="58" alt="Quotiflex — Flexible and Precise" loading="lazy">
+      </picture>
+    </a>
+    <nav aria-label="Footer">
+      <a href="#product">Product</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+      <a href="#privacy">Privacy</a>
+      <a href="https://app.quotiflex.com/">Sign in <svg class="ico" aria-hidden="true"><use href="#i-arrow-out"/></svg></a>
+    </nav>
+  </div>
+  <div class="footer-legal">
+    <p>© 2026 Quotiflex · LinkPort Systems s.r.o., Prague, Czech Republic</p>
+    <p>This site sets no cookies. What you send in the demo form reaches us through Formspree and is used only to answer you.</p>
+  </div>
+</footer>
+</body>
+</html>

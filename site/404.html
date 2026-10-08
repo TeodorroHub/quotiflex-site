@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-xMyo6U/KZ6ZD0fLXeO0PnfTN3i7GqY3Wtb4RVp0nTZw='; script-src 'sha256-DSuPp35utVM/cqmxSKH93vViICxXW6yVpDB2+nwEQ4c='; base-uri 'none'; form-action 'none'">
+<meta name="robots" content="noindex">
+<title>Page not found — Quotiflex</title>
+<style>
+:root { --navy: #081942; --muted: #5a6884; --link: #006ce0; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px 18px;
+  color: var(--navy);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  background: radial-gradient(ellipse at 85% 10%, #d7eaff 0, transparent 55%), radial-gradient(ellipse at 10% 90%, #e3edff 0, transparent 50%), #f7faff;
+}
+main {
+  width: min(560px, 100%);
+  padding: 44px 40px;
+  text-align: center;
+  background: rgba(255, 255, 255, .7);
+  border: 1px solid rgba(255, 255, 255, .95);
+  border-radius: 25px;
+  box-shadow: 0 15px 45px #4976b514, inset 0 1px 2px white;
+}
+.mark { display: inline-flex; align-items: center; gap: 10px; font-size: 26px; font-weight: 800; letter-spacing: -.04em; color: #0b1f5c; }
+.mark svg { width: 38px; height: 38px; }
+.tagline { margin: 2px 0 26px; font-size: 13px; color: var(--muted); }
+.code { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); }
+h1 { margin: 8px 0 12px; font-size: 34px; line-height: 1.15; letter-spacing: -.035em; }
+p { margin: 0 0 26px; color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+}
+.primary { color: #fff; background: linear-gradient(120deg, #0070e8, #0a72ea); box-shadow: 0 12px 25px #0082ff25; }
+.ghost { color: var(--navy); background: #ffffffa0; border: 1px solid #dce7f5; }
+a:focus-visible { outline: 3px solid #0065d3; outline-offset: 4px; }
+a svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+</style>
+</head>
+<body>
+<main>
+  <div class="mark" aria-label="Quotiflex" role="img">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="q" x2="1" y2="1"><stop stop-color="#0034c8"/><stop offset="1" stop-color="#00c9fa"/></linearGradient></defs><circle cx="29" cy="29" r="19" fill="none" stroke="url(#q)" stroke-width="12"/><path d="M35 39L53 54" stroke="#007cff" stroke-width="12" stroke-linecap="round"/></svg>
+    <span aria-hidden="true">Quotiflex</span>
+  </div>
+  <p class="tagline">Flexible and Precise</p>
+  <p class="code">Error 404</p>
+  <h1>This page does not exist.</h1>
+  <p>The address may be mistyped, or the page has moved.</p>
+  <div class="actions">
+    <a class="primary" id="home" href="/">Back to the home page <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6.5 18.5 12 13 17.5"/></svg></a>
+    <a class="ghost" href="https://app.quotiflex.com/">Sign in <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg></a>
+  </div>
+</main>
+<script>
+// The site is served at the domain root and, as a preview, under /quotiflex-site/.
+if (location.pathname.indexOf('/quotiflex-site/') === 0) document.getElementById('home').href = '/quotiflex-site/';
+</script>
+</body>
+</html>
