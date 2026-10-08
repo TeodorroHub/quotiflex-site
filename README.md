@@ -3,8 +3,12 @@
 The public website of Quotiflex, the CPQ (configure, price, quote) software for manufacturers.
 This repository holds the website only; the product lives elsewhere.
 
-- Preview: https://teodorrohub.github.io/quotiflex-site/
+- Website: https://quotiflex.com (www.quotiflex.com and the old preview address
+  https://teodorrohub.github.io/quotiflex-site/ redirect to it)
 - Product sign-in: https://app.quotiflex.com
+
+The custom domain is set in the repository's Pages settings. Because the site is published by a
+GitHub Actions workflow, it needs no CNAME file.
 
 ## What is here
 
