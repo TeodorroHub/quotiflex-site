@@ -50,3 +50,11 @@ committed.
 
 Edit the files in `site/`, open `site/index.html` in a browser to check, commit and push to `main`.
 The workflow publishes the new version within a minute or two.
+
+`index.html` loads `styles.css?v=…` and `script.js?v=…`. After changing either file, change its `v`
+value (for example to the first 8 characters of the file's MD5), so browsers that cached the old
+file load the new one at once:
+
+```
+md5sum site/styles.css site/script.js | cut -c1-8
+```
