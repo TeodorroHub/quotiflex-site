@@ -552,6 +552,15 @@ footer .brand { width: 180px; }
 }
 .footer-legal p { margin: 0; }
 
+/* The company name links to linkport.cz; underlined so it reads as a link in running text. */
+.company-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, currentColor 45%, transparent);
+}
+.company-link:hover { color: var(--blue); text-decoration-color: currentColor; }
+
 @media (min-width: 1600px) {
   .hero { padding-top: 100px; padding-bottom: 65px; }
   .app-body { font-size: 11px; }
