@@ -58,9 +58,11 @@ The Content-Security-Policy allows frames from `https://www.youtube-nocookie.com
 links to the section. The privacy note under the form and the footer say that a video plays from
 YouTube once it is pressed.
 
-To add a video: copy the `<article class="video-feature">` block (a later video can go in a grid
-below the first), set the YouTube id in `href` and `data-youtube`, the title, the length and the
-text, add its poster images, and add a `VideoObject` to the JSON-LD in `<head>`.
+To add a video: copy an `<article class="video-feature">` block below the last one (every second
+card also gets the class `video-feature-flip`, which puts the player on the right), set the YouTube
+id in `href` and `data-youtube`, the title, the length and the text, add its poster images, and add
+a `VideoObject` script to the JSON-LD in `<head>`. Only one video plays at a time: starting another
+puts the poster back on the first.
 
 ## Change the site
 

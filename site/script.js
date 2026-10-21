@@ -206,7 +206,9 @@ function setUpDemoForm() {
 // A video is a link to YouTube with our own poster. Pressing it puts YouTube's
 // privacy-enhanced player (youtube-nocookie.com) in its place and starts the video;
 // before that, nothing is requested from YouTube. Without script the link opens YouTube.
+// Only one video plays at a time: starting another puts the poster back on the first.
 function setUpVideos() {
+  let playing = null;
   document.querySelectorAll('a.video-poster[data-youtube]').forEach((poster) => {
     poster.addEventListener('click', (event) => {
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.button !== 0) return;
@@ -222,7 +224,9 @@ function setUpVideos() {
       player.allowFullscreen = true;
       player.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
       frame.append(player);
+      if (playing) playing.frame.replaceWith(playing.poster);
       poster.replaceWith(frame);
+      playing = { frame, poster };
       player.focus();
     });
   });
