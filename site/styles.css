@@ -495,6 +495,36 @@ summary::after { transform: rotate(90deg); }
 details[open] summary::after { transform: rotate(0deg); }
 details p { color: var(--muted); font-size: 15px; margin: 15px 0 0; max-width: 640px; }
 
+/* Videos: the poster is ours; YouTube's privacy-enhanced player loads only when it is pressed */
+.video-link { display: inline-flex; align-items: center; gap: 10px; margin-top: 20px; font-size: 14px; font-weight: 600; color: var(--link); }
+.video-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.play-dot { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; color: white; background: linear-gradient(120deg, #0070e8, #3b8cff); box-shadow: 0 6px 14px #0082ff30; }
+.play-dot .ico { width: 13px; height: 13px; margin-left: 2px; }
+.video-link-time { color: var(--muted); font-weight: 500; }
+.video-link + .fine { margin-top: 10px; }
+.video-feature { display: grid; grid-template-columns: 1.45fr 1fr; gap: 34px; align-items: center; padding: 14px 34px 14px 14px; }
+.video-poster, .video-frame { position: relative; display: block; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; background: #e9f1fc; }
+.video-poster img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
+.video-poster:hover img { transform: scale(1.02); }
+.video-play {
+  position: absolute; left: 18px; bottom: 18px;
+  display: inline-flex; align-items: center; gap: 11px; padding: 7px 16px 7px 7px; border-radius: 40px;
+  font-size: 14px; font-weight: 600; color: var(--navy); background: #ffffffe6;
+  box-shadow: 0 10px 26px #0a3a8a26, inset 0 1px 1px white;
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  transition: transform .2s, box-shadow .2s;
+}
+.video-play .play-dot { width: 40px; height: 40px; }
+.video-play .play-dot .ico { width: 17px; height: 17px; margin-left: 3px; }
+.video-poster:hover .video-play, .video-poster:focus-visible .video-play { transform: translateY(-2px); box-shadow: 0 14px 30px #0a3a8a33, inset 0 1px 1px white; }
+.video-time { color: var(--muted); font-weight: 500; }
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-copy h3 { font-size: 26px; }
+.video-copy p { color: var(--muted); font-size: 15px; }
+.video-copy .feature-number { display: block; margin-bottom: 14px; }
+.video-links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0; }
+.video-note { font-size: 12px; margin: 16px 0 0; }
+
 /* Contact and the demo form */
 .contact {
   background: linear-gradient(120deg, #e7f2ff99, #ffffffb0);
@@ -615,6 +645,8 @@ footer .brand { width: 180px; }
   .collaboration { max-width: 650px; }
   .team-photo { height: 240px; }
   .feature-grid { grid-template-columns: 1fr; }
+  .video-feature { grid-template-columns: 1fr; gap: 22px; padding: 12px 12px 26px; }
+  .video-copy { padding: 0 14px; }
   .feature { display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; }
   .feature-number, .feature h3 { grid-column: 1; }
   .feature > p { grid-column: 1; margin-bottom: 0; }
@@ -719,6 +751,10 @@ footer .brand { width: 180px; }
   footer nav { gap: 6px 20px; }
   .footer-legal { flex-direction: column; }
   .about { width: calc(100% - 36px); }
+  .video-play { left: 10px; bottom: 10px; font-size: 13px; padding: 5px 13px 5px 5px; gap: 9px; }
+  .video-play .play-dot { width: 32px; height: 32px; }
+  .video-play-label { display: none; }
+  .video-copy h3 { font-size: 22px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

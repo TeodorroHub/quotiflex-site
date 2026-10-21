@@ -20,7 +20,8 @@ GitHub Actions workflow, it needs no CNAME file.
 ## Rules the site keeps
 
 - No analytics, no trackers, no cookies, nothing loaded from another address. Fonts and images are
-  served from this site.
+  served from this site. The one exception is a YouTube video, and only after the visitor presses
+  its play button (see "Videos" below).
 - Every asset path is relative, so the same files work under `/quotiflex-site/` and at the root of
   a custom domain.
 - Only the fictional demonstration companies of the product's seed data appear on the site. No
@@ -45,6 +46,21 @@ fictional demonstration data.
 
 The photos were resized and converted to WebP, with a JPEG or PNG fallback, before they were
 committed.
+
+## Videos
+
+The section `#videos` (after the benefits) shows the product videos of the Quotiflex YouTube channel
+(https://www.youtube.com/@quotiflex_com). Each video is a link to YouTube with our own poster in
+`site/img/video-N-*.{webp,jpg}`, made from the cover frame of the video. Pressing it makes
+`script.js` put YouTube's privacy-enhanced player (`youtube-nocookie.com`) in its place; before
+that, the page requests nothing from YouTube, and without script the link simply opens YouTube.
+The Content-Security-Policy allows frames from `https://www.youtube-nocookie.com` only. The hero
+links to the section. The privacy note under the form and the footer say that a video plays from
+YouTube once it is pressed.
+
+To add a video: copy the `<article class="video-feature">` block (a later video can go in a grid
+below the first), set the YouTube id in `href` and `data-youtube`, the title, the length and the
+text, add its poster images, and add a `VideoObject` to the JSON-LD in `<head>`.
 
 ## Change the site
 

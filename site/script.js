@@ -1,7 +1,8 @@
 'use strict';
 
-// Quotiflex website: the phone menu, the role tabs and the demo request form.
-// No cookies, no storage, no trackers, nothing loaded from another address.
+// Quotiflex website: the phone menu, the role tabs, the demo request form and the videos.
+// No cookies, no storage, no trackers. Nothing is loaded from another address, except a
+// YouTube video in privacy-enhanced mode once the visitor presses its play button.
 
 // The one place the form's address is set: the Formspree form that delivers demo requests.
 // The id is public by design; the mailbox it forwards to lives only in the Formspree account.
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setUpMenu();
   setUpTabs();
   setUpDemoForm();
+  setUpVideos();
 });
 
 function setUpMenu() {
@@ -198,5 +200,30 @@ function setUpDemoForm() {
       button.disabled = false;
       form.removeAttribute('aria-busy');
     }
+  });
+}
+
+// A video is a link to YouTube with our own poster. Pressing it puts YouTube's
+// privacy-enhanced player (youtube-nocookie.com) in its place and starts the video;
+// before that, nothing is requested from YouTube. Without script the link opens YouTube.
+function setUpVideos() {
+  document.querySelectorAll('a.video-poster[data-youtube]').forEach((poster) => {
+    poster.addEventListener('click', (event) => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.button !== 0) return;
+      const id = poster.dataset.youtube;
+      if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return;
+      event.preventDefault();
+      const frame = document.createElement('div');
+      frame.className = 'video-frame';
+      const player = document.createElement('iframe');
+      player.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1`;
+      player.title = poster.getAttribute('aria-label').replace(/^Play the video: /, '');
+      player.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      player.allowFullscreen = true;
+      player.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      frame.append(player);
+      poster.replaceWith(frame);
+      player.focus();
+    });
   });
 }
