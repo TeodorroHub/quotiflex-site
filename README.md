@@ -49,20 +49,28 @@ committed.
 
 ## Videos
 
-The section `#videos` (after the benefits) shows the product videos of the Quotiflex YouTube channel
-(https://www.youtube.com/@quotiflex_com). Each video is a link to YouTube with our own poster in
-`site/img/video-N-*.{webp,jpg}`, made from the cover frame of the video. Pressing it makes
-`script.js` put YouTube's privacy-enhanced player (`youtube-nocookie.com`) in its place; before
-that, the page requests nothing from YouTube, and without script the link simply opens YouTube.
+The section `#videos` (after the benefits) is the library of the product videos of the Quotiflex
+YouTube channel (https://www.youtube.com/@quotiflex_com): one large player (1180 px wide, so that
+YouTube plays it in 1080p), under it the topic, title and text of the chosen video, and below the
+list of all videos (picture, topic, title, length). Choosing a video in the list puts it in the
+player and starts it, and the address gets its anchor, for example
+`https://quotiflex.com/#video-accessory-rules`; such a link opens the section with that video in
+the player, which is how a single video is sent to someone. Only one video plays at a time.
+
+Each video is a link to YouTube with our own poster in `site/img/video-N-{640,1280,1920}.webp` and
+`video-N-1280.jpg`, made from the cover frame of the video. Pressing it makes `script.js` put
+YouTube's privacy-enhanced player (`youtube-nocookie.com`) in its place; before that, the page
+requests nothing from YouTube, and without script every poster and list entry simply opens YouTube.
 The Content-Security-Policy allows frames from `https://www.youtube-nocookie.com` only. The hero
 links to the section. The privacy note under the form and the footer say that a video plays from
 YouTube once it is pressed.
 
-To add a video: copy an `<article class="video-feature">` block below the last one (every second
-card also gets the class `video-feature-flip`, which puts the player on the right), set the YouTube
-id in `href` and `data-youtube`, the title, the length and the text, add its poster images, and add
-a `VideoObject` script to the JSON-LD in `<head>`. Only one video plays at a time: starting another
-puts the poster back on the first.
+To add a video: add its posters, copy a `<li>` of `<ol class="video-list">` and set the anchor
+(`id="video-..."`, the topic in words), the YouTube id in `href` and `data-youtube`, the poster base
+in `data-poster`, the length in `data-length` and `data-length-label`, the text in `data-desc`, and
+the topic, title and length shown in the entry; then add a `VideoObject` script to the JSON-LD in
+`<head>`. The player above the list shows the first video in the HTML; the entry with
+`aria-current="true"` must be that one. Topic labels name the subject, not a number.
 
 ## Change the site
 

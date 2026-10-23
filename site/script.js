@@ -206,28 +206,96 @@ function setUpDemoForm() {
 // A video is a link to YouTube with our own poster. Pressing it puts YouTube's
 // privacy-enhanced player (youtube-nocookie.com) in its place and starts the video;
 // before that, nothing is requested from YouTube. Without script the link opens YouTube.
-// Only one video plays at a time: starting another puts the poster back on the first.
+// The video library has one player and a list: choosing a video in the list puts it in the
+// player and starts it, and the address gets the video's anchor (#video-...), so a link to
+// the page with that anchor opens the section with that video in the player.
 function setUpVideos() {
   let playing = null;
+  const play = (poster) => {
+    const id = poster.dataset.youtube;
+    if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return false;
+    const frame = document.createElement('div');
+    frame.className = 'video-frame';
+    const player = document.createElement('iframe');
+    player.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1`;
+    player.title = poster.getAttribute('aria-label').replace(/^Play the video: /, '');
+    player.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    player.allowFullscreen = true;
+    player.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    frame.append(player);
+    stop();
+    poster.replaceWith(frame);
+    playing = { frame, poster };
+    player.focus();
+    return true;
+  };
+  const stop = () => {
+    if (playing) playing.frame.replaceWith(playing.poster);
+    playing = null;
+  };
+  const plainClick = (event) => !(event.ctrlKey || event.metaKey || event.shiftKey || event.button !== 0);
+
   document.querySelectorAll('a.video-poster[data-youtube]').forEach((poster) => {
     poster.addEventListener('click', (event) => {
-      if (event.ctrlKey || event.metaKey || event.shiftKey || event.button !== 0) return;
-      const id = poster.dataset.youtube;
-      if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return;
-      event.preventDefault();
-      const frame = document.createElement('div');
-      frame.className = 'video-frame';
-      const player = document.createElement('iframe');
-      player.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1`;
-      player.title = poster.getAttribute('aria-label').replace(/^Play the video: /, '');
-      player.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-      player.allowFullscreen = true;
-      player.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-      frame.append(player);
-      if (playing) playing.frame.replaceWith(playing.poster);
-      poster.replaceWith(frame);
-      playing = { frame, poster };
-      player.focus();
+      if (plainClick(event) && play(poster)) event.preventDefault();
     });
   });
+
+  const library = document.querySelector('[data-video-library]');
+  if (!library) return;
+  const poster = library.querySelector('.video-poster');
+  const items = [...library.querySelectorAll('.video-item')];
+  const field = (name) => library.querySelector(`[data-video-${name}]`);
+
+  const select = (item) => {
+    stop();
+    items.forEach((other) => other.toggleAttribute('aria-current', other === item));
+    item.setAttribute('aria-current', 'true');
+    const title = item.querySelector('.video-item-title').textContent;
+    const base = item.dataset.poster;
+    poster.href = item.href;
+    poster.dataset.youtube = item.dataset.youtube;
+    poster.setAttribute('aria-label', `Play the video: ${title.replace(/\.$/, '')}, ${item.dataset.lengthLabel}`);
+    poster.querySelector('source').srcset = `${base}-640.webp 640w, ${base}-1280.webp 1280w, ${base}-1920.webp 1920w`;
+    poster.querySelector('img').src = `${base}-1280.jpg`;
+    poster.querySelector('.video-time').textContent = item.dataset.length;
+    field('topic').textContent = item.querySelector('.video-item-topic').textContent;
+    field('title').textContent = title;
+    field('desc').textContent = item.dataset.desc;
+    field('watch').href = item.href;
+  };
+
+  const showPlayer = () => {
+    const top = library.getBoundingClientRect().top;
+    if (top < 0 || top > window.innerHeight / 3) {
+      const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      library.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+    }
+  };
+
+  items.forEach((item) => {
+    item.addEventListener('click', (event) => {
+      if (!plainClick(event)) return;
+      event.preventDefault();
+      select(item);
+      history.replaceState(null, '', `#${item.id}`);
+      showPlayer();
+      play(poster);
+    });
+  });
+
+  const fromAddress = () => {
+    const item = items.find((candidate) => `#${candidate.id}` === location.hash);
+    if (!item) return;
+    select(item);
+    // The browser itself scrolls to the list item named in the address once the page has
+    // loaded; scrolling again after that keeps the player, not the list, in view.
+    const toPlayer = () => library.scrollIntoView({ block: 'start' });
+    toPlayer();
+    if (document.readyState !== 'complete') {
+      window.addEventListener('load', () => requestAnimationFrame(toPlayer), { once: true });
+    }
+  };
+  fromAddress();
+  window.addEventListener('hashchange', fromAddress);
 }
