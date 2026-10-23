@@ -208,7 +208,8 @@ function setUpDemoForm() {
 // before that, nothing is requested from YouTube. Without script the link opens YouTube.
 // The video library has one player and a list: choosing a video in the list puts it in the
 // player and starts it, and the address gets the video's anchor (#video-...), so a link to
-// the page with that anchor opens the section with that video in the player.
+// the page with that anchor opens the section with that video in the player. The anchors sit
+// at the top of the player, so the browser scrolls a link with one to the player by itself.
 function setUpVideos() {
   let playing = null;
   const play = (poster) => {
@@ -278,23 +279,15 @@ function setUpVideos() {
       if (!plainClick(event)) return;
       event.preventDefault();
       select(item);
-      history.replaceState(null, '', `#${item.id}`);
+      history.replaceState(null, '', `#${item.dataset.anchor}`);
       showPlayer();
       play(poster);
     });
   });
 
   const fromAddress = () => {
-    const item = items.find((candidate) => `#${candidate.id}` === location.hash);
-    if (!item) return;
-    select(item);
-    // The browser itself scrolls to the list item named in the address once the page has
-    // loaded; scrolling again after that keeps the player, not the list, in view.
-    const toPlayer = () => library.scrollIntoView({ block: 'start' });
-    toPlayer();
-    if (document.readyState !== 'complete') {
-      window.addEventListener('load', () => requestAnimationFrame(toPlayer), { once: true });
-    }
+    const item = items.find((candidate) => `#${candidate.dataset.anchor}` === location.hash);
+    if (item) select(item);
   };
   fromAddress();
   window.addEventListener('hashchange', fromAddress);

@@ -65,11 +65,12 @@ The Content-Security-Policy allows frames from `https://www.youtube-nocookie.com
 links to the section. The privacy note under the form and the footer say that a video plays from
 YouTube once it is pressed.
 
-To add a video: add its posters, copy a `<li>` of `<ol class="video-list">` and set the anchor
-(`id="video-..."`, the topic in words), the YouTube id in `href` and `data-youtube`, the poster base
-in `data-poster`, the length in `data-length` and `data-length-label`, the text in `data-desc`, and
-the topic, title and length shown in the entry; then add a `VideoObject` script to the JSON-LD in
-`<head>`. The player above the list shows the first video in the HTML; the entry with
+To add a video: add its posters; add a `<span class="video-anchor" id="video-...">` (the topic in
+words) next to the others at the top of the library, where the browser scrolls a link with that
+anchor; copy a `<li>` of `<ol class="video-list">` and set the same anchor in `data-anchor`, the
+YouTube id in `href` and `data-youtube`, the poster base in `data-poster`, the length in
+`data-length` and `data-length-label`, the text in `data-desc`, and the topic, title and length
+shown in the entry; then add a `VideoObject` script to the JSON-LD in `<head>`. The player above the list shows the first video in the HTML; the entry with
 `aria-current="true"` must be that one. Topic labels name the subject, not a number.
 
 ## Change the site
