@@ -245,21 +245,17 @@ picture { display: contents; }
 .ai-control .pill .ico { font-size: 13px; }
 .ai-control p { font-size: 14.5px; color: rgb(var(--ink-soft)); }
 
-/* Integration: the customer's ERP and CRM on both sides of Quotiflex, and what flows between them. */
-.connect { padding: 28px; border-radius: var(--r-xl); }
-.connect-map { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.1fr) auto minmax(0, 1fr); align-items: center; gap: 14px; }
-.node { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 24px 18px; border-radius: 18px; text-align: center; background: rgb(var(--fill) / .06); box-shadow: inset 0 0 0 .5px rgb(var(--hair) / .14); }
-.node .icon { display: grid; place-items: center; width: 40px; height: 40px; margin-bottom: 6px; border-radius: 12px; font-size: 20px; color: rgb(var(--blue-deep)); background: rgb(var(--blue) / .12); }
-.node strong { font-size: 17px; font-weight: 650; letter-spacing: -.01em; color: rgb(var(--ink)); }
-.node > span:last-child { font-size: 13.5px; line-height: 1.45; color: rgb(var(--ink-muted)); }
-.node-main { background: rgba(255, 255, 255, .92); box-shadow: 0 0 0 1px rgb(var(--blue) / .3), var(--sh-card); }
-.node-main .icon { color: #fff; background: linear-gradient(180deg, #2f97ff, #0a84ff 55%, #0876e4); }
-.flow { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
-.flow li { display: flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 550; white-space: nowrap; color: rgb(var(--blue-deep)); }
-.flow li span { padding: 5px 10px; border-radius: 999px; background: rgb(var(--blue) / .08); }
-.flow .arrow { font-size: 18px; color: rgb(var(--blue)); }
-.flow .arrow-back { transform: scaleX(-1); }
-.connect-points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin: 24px 0 0; padding: 22px 4px 0; list-style: none; border-top: .5px solid rgb(var(--hair) / .18); }
+/* Integration: the groups of widely used systems Quotiflex connects to, on the base built into it. */
+.connect { padding: 12px; border-radius: var(--r-xl); }
+.connect-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.connect-group { padding: 22px 22px 24px; border-radius: 16px; transition: background-color 200ms ease; }
+.connect-group:hover { background: rgb(var(--fill) / .06); }
+.connect-group .icon { display: grid; place-items: center; width: 34px; height: 34px; margin-bottom: 14px; border-radius: 10px; font-size: 18px; color: rgb(var(--blue-deep)); background: rgb(var(--blue) / .12); }
+.connect-group h3 { font-size: 17px; line-height: 1.3; font-weight: 650; letter-spacing: -.01em; }
+.names { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; list-style: none; }
+.names li { padding: 4px 10px; border-radius: 999px; font-size: 13px; line-height: 1.4; color: rgb(var(--ink-soft)); background: rgb(var(--fill) / .08); box-shadow: inset 0 0 0 .5px rgb(var(--hair) / .1); }
+.connect-points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin: 6px 0 0; padding: 22px 22px 6px; list-style: none; border-top: .5px solid rgb(var(--hair) / .18); }
+.connect-note { margin: 12px 0 0; padding: 0 22px 12px; font-size: 12px; line-height: 1.5; color: rgb(var(--ink-muted)); }
 .connect-points li { display: flex; align-items: flex-start; gap: 12px; font-size: 14.5px; line-height: 1.5; color: rgb(var(--ink-muted)); }
 .connect-points strong { font-weight: 650; color: rgb(var(--ink)); }
 .connect-points .icon { display: grid; flex: none; place-items: center; width: 30px; height: 30px; border-radius: 9px; font-size: 16px; color: rgb(var(--blue-deep)); background: rgb(var(--blue) / .1); }
@@ -426,10 +422,7 @@ footer nav a:hover { color: rgb(var(--blue-deep)); }
   .role-panel { gap: 26px; padding: 32px; }
   .ai-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ai-control { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .connect-map { grid-template-columns: 1fr; gap: 10px; }
-  .flow { grid-auto-flow: column; justify-content: center; gap: 10px; }
-  .flow .arrow { transform: rotate(90deg); }
-  .flow .arrow-back { transform: rotate(-90deg); }
+  .connect-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .connect-points { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
@@ -446,10 +439,11 @@ footer nav a:hover { color: rgb(var(--blue-deep)); }
   .benefits { grid-template-columns: 1fr; }
   .ai-grid { grid-template-columns: 1fr; }
   .ai-item { padding: 18px 14px 20px; }
-  .connect { padding: 14px; }
-  .flow { grid-auto-flow: row; justify-items: center; gap: 8px; }
-  .flow li { white-space: normal; }
-  .connect-points { padding: 18px 4px 4px; }
+  .connect { padding: 8px; }
+  .connect-grid { grid-template-columns: 1fr; }
+  .connect-group { padding: 18px 14px 20px; }
+  .connect-points { padding: 18px 14px 4px; }
+  .connect-note { padding: 0 14px 10px; }
   .section { padding-top: 92px; }
   .video-library { padding: 8px 8px 18px; }
   .video-caption { padding: 20px 8px 0; }
