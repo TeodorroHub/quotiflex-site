@@ -245,6 +245,25 @@ picture { display: contents; }
 .ai-control .pill .ico { font-size: 13px; }
 .ai-control p { font-size: 14.5px; color: rgb(var(--ink-soft)); }
 
+/* Integration: the customer's ERP and CRM on both sides of Quotiflex, and what flows between them. */
+.connect { padding: 28px; border-radius: var(--r-xl); }
+.connect-map { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.1fr) auto minmax(0, 1fr); align-items: center; gap: 14px; }
+.node { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 24px 18px; border-radius: 18px; text-align: center; background: rgb(var(--fill) / .06); box-shadow: inset 0 0 0 .5px rgb(var(--hair) / .14); }
+.node .icon { display: grid; place-items: center; width: 40px; height: 40px; margin-bottom: 6px; border-radius: 12px; font-size: 20px; color: rgb(var(--blue-deep)); background: rgb(var(--blue) / .12); }
+.node strong { font-size: 17px; font-weight: 650; letter-spacing: -.01em; color: rgb(var(--ink)); }
+.node > span:last-child { font-size: 13.5px; line-height: 1.45; color: rgb(var(--ink-muted)); }
+.node-main { background: rgba(255, 255, 255, .92); box-shadow: 0 0 0 1px rgb(var(--blue) / .3), var(--sh-card); }
+.node-main .icon { color: #fff; background: linear-gradient(180deg, #2f97ff, #0a84ff 55%, #0876e4); }
+.flow { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.flow li { display: flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 550; white-space: nowrap; color: rgb(var(--blue-deep)); }
+.flow li span { padding: 5px 10px; border-radius: 999px; background: rgb(var(--blue) / .08); }
+.flow .arrow { font-size: 18px; color: rgb(var(--blue)); }
+.flow .arrow-back { transform: scaleX(-1); }
+.connect-points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin: 24px 0 0; padding: 22px 4px 0; list-style: none; border-top: .5px solid rgb(var(--hair) / .18); }
+.connect-points li { display: flex; align-items: flex-start; gap: 12px; font-size: 14.5px; line-height: 1.5; color: rgb(var(--ink-muted)); }
+.connect-points strong { font-weight: 650; color: rgb(var(--ink)); }
+.connect-points .icon { display: grid; flex: none; place-items: center; width: 30px; height: 30px; border-radius: 9px; font-size: 16px; color: rgb(var(--blue-deep)); background: rgb(var(--blue) / .1); }
+
 /* Videos: one large player, the text of the chosen video, the list of all videos */
 .video-library { max-width: 1208px; margin: 0 auto; padding: 14px 14px 22px; border-radius: var(--r-xl); }
 .video-anchor { position: absolute; top: 0; left: 0; width: 1px; height: 1px; pointer-events: none; }
@@ -388,7 +407,7 @@ footer nav a:hover { color: rgb(var(--blue-deep)); }
 /* ---------- Smaller screens ---------- */
 @media (max-width: 1080px) {
   :root { --gutter: 32px; }
-  .topbar nav a { padding: 7px 9px; }
+  .topbar nav a { padding: 7px 8px; font-size: 13.5px; }
   .benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .feature-row, .feature-row:nth-child(even) { grid-template-columns: 1fr; gap: 26px; padding: 30px 22px 22px; }
   .feature-row:nth-child(even) .feature-text { order: 0; }
@@ -407,6 +426,11 @@ footer nav a:hover { color: rgb(var(--blue-deep)); }
   .role-panel { gap: 26px; padding: 32px; }
   .ai-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ai-control { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .connect-map { grid-template-columns: 1fr; gap: 10px; }
+  .flow { grid-auto-flow: column; justify-content: center; gap: 10px; }
+  .flow .arrow { transform: rotate(90deg); }
+  .flow .arrow-back { transform: rotate(-90deg); }
+  .connect-points { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   :root { --gutter: 18px; }
@@ -422,6 +446,10 @@ footer nav a:hover { color: rgb(var(--blue-deep)); }
   .benefits { grid-template-columns: 1fr; }
   .ai-grid { grid-template-columns: 1fr; }
   .ai-item { padding: 18px 14px 20px; }
+  .connect { padding: 14px; }
+  .flow { grid-auto-flow: row; justify-items: center; gap: 8px; }
+  .flow li { white-space: normal; }
+  .connect-points { padding: 18px 4px 4px; }
   .section { padding-top: 92px; }
   .video-library { padding: 8px 8px 18px; }
   .video-caption { padding: 20px 8px 0; }
