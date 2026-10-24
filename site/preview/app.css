@@ -305,7 +305,7 @@ picture { display: contents; }
 .split .kicker { margin-bottom: 16px; }
 .split .lead { margin-top: 20px; }
 .collaboration { padding: 10px; border-radius: var(--r-xl); }
-.collaboration img { width: 100%; height: 330px; object-fit: cover; border-radius: 16px; }
+.collaboration img { width: 100%; height: auto; aspect-ratio: 1200 / 690; object-fit: cover; border-radius: 16px; }
 .team-caption { display: flex; align-items: center; gap: 14px; padding: 16px 12px 8px; }
 .team-caption .icon { display: grid; place-items: center; width: 34px; height: 34px; flex: none; border-radius: 10px; font-size: 18px; color: rgb(var(--blue-deep)); background: rgb(var(--blue) / .12); }
 .team-caption strong { display: block; font-size: 15px; font-weight: 650; }
