@@ -203,6 +203,12 @@ picture { display: contents; }
 .play-dot .ico { width: 12px; height: 12px; margin-left: 2px; }
 .video-link-time { color: rgb(var(--ink-muted)); font-weight: 500; }
 
+.proof { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; list-style: none; margin: 26px 0 0; padding: 0; }
+.proof .chip, .principles .chip { background: rgba(255, 255, 255, .6); box-shadow: inset 0 0 0 .5px rgb(var(--hair) / .14); }
+.chip .ico { font-size: 15px; color: rgb(var(--blue-deep)); }
+.btn .play-dot { width: 22px; height: 22px; box-shadow: none; }
+.btn .play-dot .ico { width: 10px; height: 10px; font-size: 10px; }
+
 /* The real application, one screen of it, in a glass frame; it fades into the next section. */
 .shot { position: relative; margin: 64px auto 0; width: min(1240px, calc(100% - var(--gutter) * 2)); }
 .shot-frame { padding: 10px; border-radius: 26px; }
@@ -225,6 +231,19 @@ picture { display: contents; }
 .check-list { list-style: none; margin: 26px 0 30px; padding: 0; display: grid; gap: 12px; }
 .check-list li { display: flex; align-items: center; gap: 12px; font-size: 15px; color: rgb(var(--ink-soft)); }
 .check-list .ico { flex: none; width: 22px; height: 22px; padding: 4px; border-radius: 50%; stroke-width: 2.4; color: #1d8a3e; background: rgb(var(--green) / .15); }
+
+/* AI built in: six things the AI does, and how it stays under control */
+.ai-panel { padding: 12px; border-radius: var(--r-xl); }
+.ai-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.ai-item { padding: 22px 22px 24px; border-radius: 16px; transition: background-color 200ms ease; }
+.ai-item:hover { background: rgb(var(--fill) / .06); }
+.ai-item .icon { display: grid; place-items: center; width: 34px; height: 34px; margin-bottom: 16px; border-radius: 10px; font-size: 18px; color: #6d3fd1; background: rgb(191 90 242 / .13); }
+.ai-item h3 { font-size: 17px; line-height: 1.3; font-weight: 650; letter-spacing: -.01em; }
+.ai-item p { margin-top: 8px; font-size: 14.5px; line-height: 1.55; color: rgb(var(--ink-muted)); }
+.ai-control { display: flex; align-items: center; gap: 22px; margin: 6px 0 0; padding: 20px 22px; border-radius: 16px; background: rgb(var(--blue) / .06); }
+.ai-control .pill { flex: none; }
+.ai-control .pill .ico { font-size: 13px; }
+.ai-control p { font-size: 14.5px; color: rgb(var(--ink-soft)); }
 
 /* Videos: one large player, the text of the chosen video, the list of all videos */
 .video-library { max-width: 1208px; margin: 0 auto; padding: 14px 14px 22px; border-radius: var(--r-xl); }
@@ -386,6 +405,8 @@ footer nav a:hover { color: rgb(var(--blue-deep)); }
   .video-caption, .role-panel { grid-template-columns: 1fr; }
   .video-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .role-panel { gap: 26px; padding: 32px; }
+  .ai-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ai-control { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
 @media (max-width: 560px) {
   :root { --gutter: 18px; }
@@ -399,6 +420,8 @@ footer nav a:hover { color: rgb(var(--blue-deep)); }
   .shot-frame { padding: 5px; border-radius: 16px; }
   .shot-frame img { border-radius: 12px; }
   .benefits { grid-template-columns: 1fr; }
+  .ai-grid { grid-template-columns: 1fr; }
+  .ai-item { padding: 18px 14px 20px; }
   .section { padding-top: 92px; }
   .video-library { padding: 8px 8px 18px; }
   .video-caption { padding: 20px 8px 0; }
