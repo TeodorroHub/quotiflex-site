@@ -14,7 +14,7 @@ GitHub Actions workflow, it needs no CNAME file.
 
 | Path | What |
 |---|---|
-| `site/` | The published website: plain HTML, CSS and a small script, no framework, no build step |
+| `site/` | The published website: plain HTML, one stylesheet and two small scripts, no framework, no build step |
 | `.github/workflows/pages.yml` | Publishes `site/` to GitHub Pages on every push to `main` |
 
 ## Rules the site keeps
@@ -26,6 +26,28 @@ GitHub Actions workflow, it needs no CNAME file.
   a custom domain.
 - Only the fictional demonstration companies of the product's seed data appear on the site. No
   customer names, testimonials, numbers, awards or prices.
+- Other companies' systems are named only in the integration section, as examples of widely used
+  systems, with the note that the names are trademarks of their owners and imply no affiliation.
+  No logos of them.
+- No long or medium dashes (U+2014, U+2013) anywhere in the texts.
+
+## Design
+
+The page uses the design of the Quotiflex application (app.quotiflex.com), so the website and the
+product read as one line: the colour tokens, the wallpaper with its soft spots and grain
+(`site/img/grain.png`), the glass surfaces, the system font stack, the buttons, pills and inputs
+come from `frontend/src/index.css` of the application, scaled up where a web page needs it.
+
+| File | What |
+|---|---|
+| `site/styles.css` | All styles of the page |
+| `site/script.js` | The menu on phones, the role tabs, the demo form and the video library |
+| `site/fx.js` | Motion only: the highlight under the pointer, blocks that settle in as they appear, the sliding thumb of the role tabs. Blocks are hidden before they appear only when this script runs, so without it the page is complete and static. With reduced motion asked for, nothing moves |
+
+The sections, in order: first screen with a real screen of the application; four benefits; AI
+(what the built-in AI proposes and how it is controlled); videos; from the first call to the signed
+order (with the team photo); three moments of a quote as they look in the application; integration;
+roles; approach; questions; the demo request.
 
 ## Images, logo and font
 
@@ -34,15 +56,18 @@ GitHub Actions workflow, it needs no CNAME file.
 | `site/img/logo-full.png`, `logo-450.*`, `logo-760.webp`, `logo-mark.png` | The Quotiflex logo files ("Flexible and Precise"), resized for the header and the footer | Owned by Quotiflex; not covered by any open licence |
 | `site/favicon.svg`, `site/favicon.ico`, `site/img/apple-touch-icon.png`, `site/img/icon-192.png` | The design's Quotiflex "Q" icon; the PNG and ICO files are drawn from the SVG | Owned by Quotiflex |
 | `site/img/og-image.png` | The Quotiflex link preview image (1200 × 630) | Owned by Quotiflex |
-| `site/img/team-*` | Photo "A Group of People Looking at the Laptop" by Yan Krukau, https://www.pexels.com/photo/a-group-of-people-looking-at-the-laptop-7691708/, cropped to a wide strip | Pexels License (free for commercial use, no attribution required): https://www.pexels.com/license/ |
+| `site/img/team-meeting-*` | Photo "Business meeting 2" supplied by the owner of Quotiflex (October 2026), cut out of its card frame at the photo's edges and resized to 600, 800 and 1200 px | Supplied by the owner for this site |
+| `site/img/screen-*` | Real screens of the Quotiflex application with sample data, cut from the clean recordings of the product videos (2880 x 1620): the quote with the deal journal, the accessories of a line, an approval request, the document in two languages | Owned by Quotiflex |
+| `site/img/grain.png` | The 128 px grain tile of the application's wallpaper | Owned by Quotiflex |
 | `site/fonts/InterVariable-latin.woff2` | Inter 4.1 by Rasmus Andersson, https://github.com/rsms/inter (variable font, subset to Latin) | SIL Open Font License 1.1, see `site/fonts/OFL.txt` |
 
-The people in the photo are models from a stock photo. The site does not present them as
-customers or staff and does not suggest they endorse the product.
+The people in the photo are not customers or staff of any company. The site does not present
+them as such and does not suggest they endorse the product.
 
-The quote screen in the hero is drawn in HTML and CSS as an illustration with sample data. The
-names in it (Malar Valley Greenhouses, the product TP-24, the initials ML) come from the product's
-fictional demonstration data.
+The screens show only the product's fictional demonstration data (for example Osterlen Orchards
+and quote Q-2026-32). The mouse pointer was taken out of the recordings by the median of still
+frames. On the document picture, the Danish heading of line 1 was set to "Linje 1: maskinerne på
+ruten", which is what the application prints there; the recording still showed the English name.
 
 The photos were resized and converted to WebP, with a JPEG or PNG fallback, before they were
 committed.
@@ -50,8 +75,8 @@ committed.
 ## Videos
 
 The section `#videos` (after the benefits) is the library of the product videos of the Quotiflex
-YouTube channel (https://www.youtube.com/@quotiflex_com): one large player (1180 px wide, so that
-YouTube plays it in 1080p), under it the topic, title and text of the chosen video, and below the
+YouTube channel (https://www.youtube.com/@quotiflex_com): one large player (1150 px wide on a
+desktop screen, so that YouTube plays it in 1080p; it chooses the quality by the player's size), under it the topic, title and text of the chosen video, and below the
 list of all videos (picture, topic, title, length). Choosing a video in the list puts it in the
 player and starts it, and the address gets its anchor, for example
 `https://quotiflex.com/#video-accessory-rules`; such a link opens the section with that video in
@@ -78,10 +103,13 @@ shown in the entry; then add a `VideoObject` script to the JSON-LD in `<head>`. 
 Edit the files in `site/`, open `site/index.html` in a browser to check, commit and push to `main`.
 The workflow publishes the new version within a minute or two.
 
-`index.html` loads `styles.css?v=…` and `script.js?v=…`. After changing either file, change its `v`
-value (for example to the first 8 characters of the file's MD5), so browsers that cached the old
-file load the new one at once:
+`index.html` loads `styles.css?v=…`, `script.js?v=…` and `fx.js?v=…`, and the screen pictures and
+the team photo also carry `?v=…`. After changing such a file, change its `v` value to the first 8
+characters of the file's MD5, so browsers that cached the old file load the new one at once:
 
 ```
-md5sum site/styles.css site/script.js | cut -c1-8
+md5sum site/styles.css site/script.js site/fx.js | cut -c1-8
+md5sum site/img/screen-*.webp site/img/team-meeting-* | cut -c1-8
 ```
+
+The old preview address https://quotiflex.com/preview/ only forwards to the home page.
