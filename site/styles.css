@@ -194,6 +194,7 @@ picture { display: contents; }
 .hero { padding: 92px 0 0; text-align: center; }
 .hero .kicker { margin-bottom: 22px; }
 .hero .display { max-width: 900px; margin: 0 auto; }
+.hero-title .kicker, .hero-title .display { display: block; }
 .hero .lead { max-width: 640px; margin: 26px auto 0; }
 .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 36px; }
 .hero-meta { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 18px; margin-top: 22px; font-size: 13px; color: rgb(var(--ink-muted)); }
@@ -215,7 +216,7 @@ picture { display: contents; }
 .shot-frame img { width: 100%; border-radius: 17px; box-shadow: inset 0 0 0 .5px rgb(var(--hair) / .12); }
 .hero .shot-frame { box-shadow: var(--sh-shot); }
 .hero .shot { -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%); mask-image: linear-gradient(180deg, #000 72%, transparent 100%); }
-.shot-note { margin-top: 6px; font-size: 12px; color: rgb(var(--ink-tertiary)); text-align: center; }
+.shot-note { margin-top: 6px; font-size: 12px; color: rgb(var(--ink-muted)); text-align: center; }
 
 /* ---------- Benefits ---------- */
 .benefits { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 8px; }
@@ -294,7 +295,43 @@ picture { display: contents; }
 .video-item[aria-current="true"] .video-item-topic { color: rgb(var(--blue-deep)); }
 .video-item-title { display: block; margin: 3px 0; font-size: 14px; font-weight: 600; line-height: 1.35; }
 .video-item-time { display: block; font-size: 12px; color: rgb(var(--ink-muted)); }
-.video-note { margin: 14px 12px 0; font-size: 12px; color: rgb(var(--ink-tertiary)); }
+.video-note { margin: 14px 12px 0; font-size: 12px; color: rgb(var(--ink-muted)); }
+.video-pages { margin: 18px 12px 0; font-size: 13.5px; color: rgb(var(--ink-muted)); }
+.video-pages a { font-weight: 600; color: rgb(var(--blue-deep)); }
+.video-pages a:hover { color: rgb(var(--blue)); }
+
+/* ---------- Video pages (videos/*.html): one video, its text and the other videos ---------- */
+.crumbs { margin-top: 44px; font-size: 13px; color: rgb(var(--ink-muted)); }
+.crumbs ol { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.crumbs li + li::before { content: "/"; margin-right: 6px; color: rgb(var(--ink-tertiary)); }
+.crumbs a { color: rgb(var(--blue-deep)); }
+.crumbs a:hover { color: rgb(var(--blue)); }
+.watch-head { max-width: 860px; margin: 26px 0 30px; }
+.watch-head .kicker { display: block; margin-bottom: 14px; color: rgb(var(--blue-deep)); }
+.watch-head .lead { margin-top: 16px; }
+.watch-player { padding: 12px; border-radius: var(--r-xl); }
+.watch-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 24px; padding: 16px 8px 4px; font-size: 13px; color: rgb(var(--ink-muted)); }
+.watch-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; margin-top: 16px; }
+.watch-card { padding: 30px 30px 32px; border-radius: var(--r-xl); }
+.watch-card h2 { font-size: 22px; line-height: 1.25; font-weight: 650; letter-spacing: -.015em; }
+.watch-card .check-list { margin: 20px 0 0; }
+.watch-card .check-list li { align-items: flex-start; }
+.transcript { display: grid; gap: 10px; margin-top: 18px; font-size: 15px; color: rgb(var(--ink-soft)); }
+.transcript p { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 10px; }
+.transcript time { font-size: 12.5px; line-height: 23px; color: rgb(var(--ink-tertiary)); font-variant-numeric: tabular-nums; }
+.watch-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px; margin-top: 16px; padding: 30px; border-radius: var(--r-xl); }
+.watch-cta p { max-width: 620px; color: rgb(var(--ink-soft)); }
+.watch-cta strong { display: block; font-size: 20px; font-weight: 650; letter-spacing: -.01em; color: rgb(var(--ink)); }
+.watch-more { margin-top: 72px; }
+.watch-more h2 { margin-bottom: 18px; }
+.watch-more .video-list { margin: 0; padding: 0; border-top: 0; }
+@media (max-width: 860px) {
+  .watch-body { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .watch-player { padding: 6px; }
+  .watch-card, .watch-cta { padding: 22px 18px; }
+}
 
 /* Product: words on one side, the team on the other */
 .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 72px; align-items: center; }
@@ -388,7 +425,7 @@ footer { margin-top: 96px; padding: 28px 0 40px; border-top: .5px solid rgb(var(
 footer nav { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 13px; color: rgb(var(--ink-soft)); }
 footer nav a { display: inline-flex; align-items: center; gap: 4px; }
 footer nav a:hover { color: rgb(var(--blue-deep)); }
-.footer-legal { display: grid; gap: 6px; margin-top: 18px; font-size: 12px; color: rgb(var(--ink-tertiary)); }
+.footer-legal { display: grid; gap: 6px; margin-top: 18px; font-size: 12px; color: rgb(var(--ink-muted)); }
 
 /* ---------- Motion: the app's jelly, on entering the screen ---------- */
 @keyframes jelly-in {

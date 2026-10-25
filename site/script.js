@@ -264,6 +264,8 @@ function setUpVideos() {
     field('title').textContent = title;
     field('desc').textContent = item.dataset.desc;
     field('watch').href = item.href;
+    const page = field('page');
+    if (page && item.dataset.page) page.href = item.dataset.page;
   };
 
   const showPlayer = () => {
