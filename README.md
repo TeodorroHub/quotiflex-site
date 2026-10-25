@@ -118,6 +118,24 @@ the JSON-LD and in the sitemap. The player above the list shows the first video 
 - The `<h1>` of the home page starts with the words people search for ("CPQ software for machine
   manufacturers"); keep them there when the headline changes.
 - Title up to 60 characters, meta description up to 155, on every page, each one unique.
+- The product message: Quotiflex is built around AI to make quoting faster and simpler, which directly
+  increases the number of sales. Say how (more quotes, sent sooner, right the first time); do not claim
+  measured results until there are figures that can be shown.
+
+## AI assistants (ChatGPT, Claude, Gemini, Perplexity, Copilot)
+
+- `site/robots.txt` allows every crawler and names the AI search and assistant crawlers explicitly
+  (OAI-SearchBot, ChatGPT-User, GPTBot, ClaudeBot, Claude-SearchBot, Claude-User, PerplexityBot,
+  Google-Extended, Applebot-Extended, Bingbot and others). Do not block them: ChatGPT and Copilot
+  search through Bing, Claude through its own crawlers and Brave, Gemini through Google.
+- `site/llms.txt` is the short description of the site for AI assistants (the llms.txt convention),
+  ``site/llms-full.txt` the whole product description in plain text`. Keep them in step with the page when a text or a fact changes.
+- `site/323dad004b99ba6e889335e7b6417e60.txt` is the IndexNow key. After a change, send the changed addresses to
+  `https://api.indexnow.org/indexnow?url=<address>&key=323dad004b99ba6e889335e7b6417e60`; Bing, Seznam and Yandex share them.
+- The questions and answers on the home page are also in the JSON-LD as `FAQPage`.
+- AI assistants quote plain, complete sentences: every important fact (what the product is, who makes
+  it, what the AI does, what it changes for sales) is written out once in plain words in the page and
+  in the questions and answers, not only in pictures or in text that a script shows later.
 
 ## Change the site
 
