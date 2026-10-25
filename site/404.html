@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-xMyo6U/KZ6ZD0fLXeO0PnfTN3i7GqY3Wtb4RVp0nTZw='; script-src 'sha256-DSuPp35utVM/cqmxSKH93vViICxXW6yVpDB2+nwEQ4c='; base-uri 'none'; form-action 'none'">
+<meta name="theme-color" content="#eff2f0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-RCw66pdn4geyMYTVdHgDwUceCqu2+xmMh9FXC8/eNPM='; script-src 'sha256-DSuPp35utVM/cqmxSKH93vViICxXW6yVpDB2+nwEQ4c='; base-uri 'none'; form-action 'none'">
 <meta name="robots" content="noindex">
-<title>Page not found — Quotiflex</title>
+<title>Page not found · Quotiflex</title>
 <style>
-:root { --navy: #081942; --muted: #5a6884; --link: #006ce0; }
+:root { --ink: #1d1d1f; --muted: #6e6e73; --tertiary: #8e8e93; --blue: #0a84ff; --blue-deep: #0063cc; }
 * { box-sizing: border-box; }
 body {
   margin: 0;
@@ -15,41 +16,48 @@ body {
   display: grid;
   place-items: center;
   padding: 24px 18px;
-  color: var(--navy);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.6;
-  background: radial-gradient(ellipse at 85% 10%, #d7eaff 0, transparent 55%), radial-gradient(ellipse at 10% 90%, #e3edff 0, transparent 50%), #f7faff;
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI Variable Display", "Segoe UI", Inter, Roboto, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  background:
+    radial-gradient(ellipse at 12% 8%, #d3f0e1 0, transparent 46%),
+    radial-gradient(ellipse at 88% 12%, #e2ecff 0, transparent 46%),
+    radial-gradient(ellipse at 82% 92%, #e8f5d6 0, transparent 44%),
+    radial-gradient(ellipse at 10% 88%, #f3ece0 0, transparent 44%),
+    #eff2f0;
 }
 main {
   width: min(560px, 100%);
   padding: 44px 40px;
   text-align: center;
-  background: rgba(255, 255, 255, .7);
-  border: 1px solid rgba(255, 255, 255, .95);
-  border-radius: 25px;
-  box-shadow: 0 15px 45px #4976b514, inset 0 1px 2px white;
+  background: rgba(255, 255, 255, .72);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  backdrop-filter: blur(28px) saturate(180%);
+  border-radius: 24px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), inset 0 0 0 .5px rgba(60, 60, 67, .18), 0 8px 24px rgba(22, 32, 43, .07);
 }
-.mark { display: inline-flex; align-items: center; gap: 10px; font-size: 26px; font-weight: 800; letter-spacing: -.04em; color: #0b1f5c; }
+.mark { display: inline-flex; align-items: center; gap: 10px; font-size: 26px; font-weight: 750; letter-spacing: -.04em; color: #0b1f5c; }
 .mark svg { width: 38px; height: 38px; }
 .tagline { margin: 2px 0 26px; font-size: 13px; color: var(--muted); }
-.code { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); }
-h1 { margin: 8px 0 12px; font-size: 34px; line-height: 1.15; letter-spacing: -.035em; }
+.code { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--tertiary); }
+h1 { margin: 8px 0 12px; font-size: 34px; line-height: 1.15; font-weight: 650; letter-spacing: -.02em; }
 p { margin: 0 0 26px; color: var(--muted); }
-.actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 a {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 13px 22px;
-  border-radius: 14px;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 11px;
   font-weight: 600;
   font-size: 15px;
   text-decoration: none;
 }
-.primary { color: #fff; background: linear-gradient(120deg, #0070e8, #0a72ea); box-shadow: 0 12px 25px #0082ff25; }
-.ghost { color: var(--navy); background: #ffffffa0; border: 1px solid #dce7f5; }
-a:focus-visible { outline: 3px solid #0065d3; outline-offset: 4px; }
-a svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.primary { color: #fff; background: linear-gradient(180deg, #2f97ff, #0a84ff 55%, #0876e4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 6px 16px rgba(10, 132, 255, .25); }
+.ghost { color: var(--ink); background: rgba(255, 255, 255, .8); box-shadow: inset 0 0 0 .5px rgba(60, 60, 67, .22); }
+a:focus-visible { outline: 3px solid rgba(10, 132, 255, .45); outline-offset: 3px; }
+a svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 </style>
 </head>
 <body>
