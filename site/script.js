@@ -18,22 +18,22 @@ const FORM_TEXT = {
 
 const ROLES = {
   sales: {
-    label: 'For sales teams',
-    title: 'Keep the customer conversation moving.',
-    description: 'Build a clear proposal around the customer’s requirements. Keep versions, commercial terms and the next step in one place.',
-    points: ['Structured proposals', 'Clear commercial terms', 'Visible quote progress'],
+    label: 'For sales managers',
+    title: 'More time with the customer, less with the quote.',
+    description: 'Three screens, a quote that adds its own accessories, notes that turn into changes, and a document ready to send. Approvals are asked and answered inside the quote.',
+    points: ['Meeting notes to quote changes', 'Accessories added by the rules', 'The approval decision comes back to you'],
   },
-  engineering: {
-    label: 'For engineering teams',
-    title: 'Bring technical detail into the conversation.',
-    description: 'Connect product requirements to the proposal. Help sales keep product choices and technical specifications clear as the quote evolves.',
-    points: ['Structured product requirements', 'Traceable configuration choices', 'A shared technical context'],
+  product: {
+    label: 'For product managers',
+    title: 'Your rules, without a developer.',
+    description: 'Write a rule as one sentence, or fill in a table like a spreadsheet. Try it on a real quote before you save it, and see what it would change on every open quote.',
+    points: ['Rules from a sentence or a table', 'A trial on a quote that saves nothing', 'The effect on open quotes before you publish'],
   },
-  finance: {
-    label: 'For finance teams',
-    title: 'Keep commercial decisions in perspective.',
-    description: 'Review pricing, discounts and currency terms alongside the proposal. Keep approval decisions connected to the quote version.',
-    points: ['Pricing and discount visibility', 'Currency context', 'Traceable approval decisions'],
+  management: {
+    label: 'For approvers and management',
+    title: 'See the cost of every discount.',
+    description: 'Minimum margins on each product, approval levels by margin, and a request that shows the difference in money. Every decision keeps its reason, in the deal journal.',
+    points: ['A margin floor on each product', 'Approval levels set without code', 'Every decision with its reason'],
   },
 };
 
