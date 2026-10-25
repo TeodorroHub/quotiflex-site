@@ -1,0 +1,94 @@
+# Quotiflex: CPQ software built around AI, for machine manufacturers
+
+Website: https://quotiflex.com/
+Developer: LinkPort Systems s.r.o., Vlkova 532/8, 130 00 Praha 3, Czech Republic, IČO 30152496, https://linkport.cz/
+Application sign-in: https://app.quotiflex.com/
+Demo request: https://quotiflex.com/#contact
+
+## In short
+
+Quotiflex is CPQ (configure, price, quote) software built around AI, made for manufacturers of machines, equipment and production lines.
+
+We built Quotiflex with one goal: to use what AI can do today, as fully as possible, to speed up and simplify the work on quotes. Faster and simpler quoting directly increases the number of sales. When the AI and the rules take over the typing and the checking, a salesperson sends more quotes, answers the customer sooner and leaves fewer mistakes in them, and more quotes sent sooner and right the first time mean more orders won. That is the Quotiflex we offer to our customers today.
+
+Quotiflex keeps the whole deal in one place: what the customer said, the machines and their accessories, the price and its margin, the approval and its reason, and the document the customer reads.
+
+## What the AI does in Quotiflex
+
+In most companies a meeting note is read once and typed three times: into the quote, into the deal brief, into the to-do list. In Quotiflex the AI does that part in seconds, inside the screens where the work happens. The customer's rules check every proposal, and a person decides.
+
+- Meeting notes become quote changes. Paste a note or pick one from the deal journal. In seconds the AI proposes the line changes, the deal brief and the tasks, each with the sentence it came from.
+- A line of machines from a description. "An apple washing and grading line, 20,000 an hour" becomes machines with quantities and a reason for each: a first configuration in minutes, not hours. The rules complete and check it.
+- A rule from one sentence. A product manager describes a rule in plain words. The AI fills in the fields, the rule is tried on a real quote, and a person saves it.
+- A second look before you present. The review points at what is unusual: a discount far from its product family, or no installation line where similar quotes had one.
+- Translation with your own terms. Days of translation become a review: documents in Danish or Chinese with your glossary kept, machine names first. Legal texts are used only in their approved wording.
+- Product texts from ERP data. A first draft of a sales description from the short ERP text and the technical data, in the style of your own descriptions.
+
+Control: every AI result arrives marked as a proposal, with the sentence or the data it came from. The rules check it, and nothing is saved until a person accepts it. Administrators decide what is switched on, set the budget and see the cost of every call.
+
+## How a quote works in Quotiflex
+
+Configure. Add a machine by its name, and its accessories come with it: required parts, defaults and options, all defined by catalogue rules. Every choice shows the price difference and the rule behind it. Leave out something mandatory and the quote shows it at once. It does not block you: you give a reason, and the reason stays with the quote under your name.
+
+Price. Prices, costs and margins are visible together. Below the price floor the quote says why, in plain words, and its main button asks for approval. The approver sees the difference in money, not only in percent, and decides in one click, with a reason. The sales manager is told at once.
+
+Document. The quote opens as the document the customer will read: two languages side by side or one under the other, a hundred pages with contents, units and number formats for each market. Click a text to change it. Prices come from the quote, so nobody types a wrong number. What was sent stays exactly as it was sent; changes continue in the next revision.
+
+Deal journal. Calls, site visits, sketches and tasks are kept with the deal. Lines and sections hold whole plants, with a subtotal per line. Every presented revision is kept exactly as the customer saw it.
+
+## For each role
+
+- Sales managers: more time with the customer, less with the quote. Three screens, a quote that adds its own accessories, notes that turn into changes, and a document ready to send. Approvals are asked and answered inside the quote.
+- Product managers: rules without a developer. Write a rule as one sentence, or fill in a table like a spreadsheet. Try it on a real quote before saving it, and see what it would change on every open quote.
+- Approvers and management: the cost of every discount. Minimum margins on each product, approval levels by margin, and a request that shows the difference in money. Every decision keeps its reason, in the deal journal.
+
+## Set up without a developer
+
+Products, rules, approval levels, document templates, units, number formats and languages are settings, not custom code. Rules can be written as a sentence, filled in as a table or imported from a spreadsheet, and tried on a quote before they are saved.
+
+## Integration
+
+Integration is built into the base of Quotiflex: field mapping set up as rules, reliable delivery of every change for another system, and the numbers of the customer's own systems kept on products and customers. On that base Quotiflex is built to connect quickly to widely used systems, for example:
+
+- ERP: SAP S/4HANA, Microsoft Dynamics 365, Oracle, Infor, Odoo
+- CRM: Salesforce, Microsoft Dynamics 365, HubSpot, SAP Sales Cloud, Pipedrive
+- Sign-in: Microsoft Entra ID, Okta, Google Workspace, SAML 2.0, OpenID Connect
+- PLM and CAD: Siemens Teamcenter, PTC Windchill, SOLIDWORKS PDM, Autodesk Vault
+- Documents and e-signature: SharePoint, Google Drive, DocuSign, Adobe Acrobat Sign
+- Data exchange: REST API, OData, webhooks, Excel and CSV, XML
+
+These names are examples of widely used systems and are trademarks of their owners. Quotiflex is not affiliated with or endorsed by them.
+
+## Questions and answers
+
+What is Quotiflex?
+Quotiflex is CPQ (configure, price, quote) software built around AI, made for manufacturers of machines and production lines. It keeps the whole deal in one place: the deal journal, configuration with accessory rules, pricing with margin floors and approvals, and the quotation document in the customer's language.
+
+Who makes Quotiflex?
+LinkPort Systems s.r.o., Prague, Czech Republic (IČO 30152496), https://linkport.cz/.
+
+Why is AI at the center of Quotiflex?
+Because speeding up and simplifying the work on quotes is the goal Quotiflex was built for. The AI does the typing that takes most of a salesperson's time, and the rules and a person keep control of every result.
+
+How does Quotiflex increase sales?
+Directly, through speed and accuracy: more quotes, sent sooner and right the first time, with no forgotten accessories, no discount given without seeing its cost, and no text typed twice in two languages. That means more orders won.
+
+What does CPQ mean?
+Configure, price, quote: from what the customer needs to a priced, approved document they can sign.
+
+Do we need a developer to set it up?
+No. Products, rules, approval levels, document templates and languages are settings.
+
+How is pricing determined?
+Quotiflex does not publish a standard price list. Pricing is discussed with each customer.
+
+How can I see Quotiflex?
+Watch the videos at https://quotiflex.com/#videos or request a demo at https://quotiflex.com/#contact.
+
+## Videos with transcripts
+
+- https://quotiflex.com/videos/meeting-notes-to-quote-changes
+- https://quotiflex.com/videos/machine-accessory-rules
+- https://quotiflex.com/videos/bilingual-quotation-documents
+- https://quotiflex.com/videos/discount-approval-workflow
+- YouTube channel: https://www.youtube.com/@quotiflex_com

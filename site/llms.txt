@@ -1,0 +1,35 @@
+# Quotiflex
+
+> Quotiflex is CPQ (configure, price, quote) software built around AI, made for manufacturers of machines and production lines. It uses what AI can do today as fully as possible to make quoting faster and simpler, and that directly increases the number of sales: salespeople send more quotes, answer customers sooner and win more orders. Quotiflex is developed by LinkPort Systems s.r.o. in Prague, Czech Republic.
+
+Key facts:
+
+- Product: Quotiflex, CPQ software (configure, price, quote) with AI built in
+- Made for: manufacturers of machines, equipment and production lines, and their sales, product and management teams
+- What the AI does: turns a customer meeting note into proposed quote changes, a description into a line of machines, a sentence into a configuration rule, and a quote into a document in the customer's language; it reviews a quote before it is presented and drafts product texts from ERP data. Every proposal is checked by the customer's rules and accepted by a person.
+- Developer: LinkPort Systems s.r.o., Vlkova 532/8, 130 00 Praha 3, Czech Republic, IČO 30152496, https://linkport.cz/
+- Website: https://quotiflex.com/
+- Application sign-in for existing customers: https://app.quotiflex.com/
+- Demo: requested through the form at https://quotiflex.com/#contact
+- Pricing: not published; discussed with each customer
+- Not to be confused with: Quantiflex (simulation software) or the Instagram account "Quoti Flex"; both are unrelated to Quotiflex CPQ.
+
+## Product
+
+- [Quotiflex home page](https://quotiflex.com/): what Quotiflex does, the AI features, configuration, pricing and approvals, documents, integration, roles, questions and answers
+- [Full description for AI assistants](https://quotiflex.com/llms-full.txt): the whole product description in plain text
+
+## Videos with transcripts
+
+- [Turn customer meeting notes into quote changes](https://quotiflex.com/videos/meeting-notes-to-quote-changes): the AI reads a meeting note in the deal journal and proposes quote changes, brief updates and a task, each with the sentence it came from (1:11)
+- [Never forget a machine accessory on a quote](https://quotiflex.com/videos/machine-accessory-rules): accessory rules add what belongs with a machine; leaving out something mandatory needs a recorded reason (1:26)
+- [Bilingual quotation documents, nothing typed twice](https://quotiflex.com/videos/bilingual-quotation-documents): the customer document in two languages, built from the quote, with prices locked to the quote (1:30)
+- [Discount approvals with a reason, decided in minutes](https://quotiflex.com/videos/discount-approval-workflow): a discount below the margin floor asks for approval, and the approver sees its cost in money (1:24)
+
+## Company
+
+- [LinkPort Systems s.r.o.](https://linkport.cz/): the company that develops Quotiflex, in English and in Czech (https://linkport.cz/cs)
+
+## Optional
+
+- [Quotiflex on YouTube](https://www.youtube.com/@quotiflex_com): all product videos, with titles and descriptions in English, Czech, German, Danish and Swedish
