@@ -20,8 +20,9 @@ GitHub Actions workflow, it needs no CNAME file.
 ## Rules the site keeps
 
 - No analytics, no trackers, no cookies, nothing loaded from another address. Fonts and images are
-  served from this site. The one exception is a YouTube video, and only after the visitor presses
-  its play button (see "Videos" below).
+  served from this site. The one exception is a YouTube video: on the home page only after the
+  visitor presses its play button, on a video page (`site/videos/`) with the page, because Google
+  indexes a video only when its player is in the page without a click (see "Videos" below).
 - Every asset path is relative, so the same files work under `/quotiflex-site/` and at the root of
   a custom domain.
 - Only the fictional demonstration companies of the product's seed data appear on the site. No
@@ -42,6 +43,8 @@ come from `frontend/src/index.css` of the application, scaled up where a web pag
 |---|---|
 | `site/styles.css` | All styles of the page |
 | `site/script.js` | The menu on phones, the role tabs, the demo form and the video library |
+| `site/videos/*.html` | One page per video (a "watch page" for Google): the player, what the video shows, the transcript, the other videos. GitHub Pages serves `videos/x.html` at `/videos/x` |
+| `site/sitemap.xml` | The home page and the video pages, with the video sitemap extension (thumbnail, title, description, player, length, date) |
 | `site/fx.js` | Motion only: the highlight under the pointer, blocks that settle in as they appear, the sliding thumb of the role tabs. Blocks are hidden before they appear only when this script runs, so without it the page is complete and static. With reduced motion asked for, nothing moves |
 
 The sections, in order: first screen with a real screen of the application; four benefits; AI
@@ -95,8 +98,26 @@ words) next to the others at the top of the library, where the browser scrolls a
 anchor; copy a `<li>` of `<ol class="video-list">` and set the same anchor in `data-anchor`, the
 YouTube id in `href` and `data-youtube`, the poster base in `data-poster`, the length in
 `data-length` and `data-length-label`, the text in `data-desc`, and the topic, title and length
-shown in the entry; then add a `VideoObject` script to the JSON-LD in `<head>`. The player above the list shows the first video in the HTML; the entry with
+shown in the entry, with the address of its video page in `data-page`; add the video page to the
+sentence under the list (`.video-pages`). Then make its video page: copy a file in `site/videos/`,
+name it after the subject (words a buyer would search for, for example `discount-approval-workflow.html`)
+and change the title, description, canonical address, Open Graph tags, the `VideoObject` in the JSON-LD
+(name and description as on YouTube, `uploadDate` with the time zone as YouTube shows it, `duration`,
+`embedUrl`, `thumbnailUrl` = `https://quotiflex.com/img/video-N-1280.jpg`), the player, the points, the
+transcript and the list of the other videos (add the new one to the other pages too). Last, add the
+page with its `<video:video>` entry to `site/sitemap.xml`. The thumbnail address must be the same in
+the JSON-LD and in the sitemap. The player above the list shows the first video in the HTML; the entry with
 `aria-current="true"` must be that one. Topic labels name the subject, not a number.
+
+## Search engines
+
+- Google Search Console: the domain property `quotiflex.com` (verified by a TXT record at GoDaddy),
+  owned by vs@linkport.cz. The sitemap `https://quotiflex.com/sitemap.xml` is submitted there.
+- The home page carries `Organization` (Quotiflex, part of LinkPort Systems s.r.o.), `WebSite` and
+  `WebPage` in JSON-LD; each video page carries `VideoObject`, `WebPage` and `BreadcrumbList`.
+- The `<h1>` of the home page starts with the words people search for ("CPQ software for machine
+  manufacturers"); keep them there when the headline changes.
+- Title up to 60 characters, meta description up to 155, on every page, each one unique.
 
 ## Change the site
 
