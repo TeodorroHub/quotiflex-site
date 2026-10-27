@@ -25,6 +25,7 @@ Key facts:
 - [Never forget a machine accessory on a quote](https://quotiflex.com/videos/machine-accessory-rules): accessory rules add what belongs with a machine; leaving out something mandatory needs a recorded reason (1:26)
 - [Bilingual quotation documents, nothing typed twice](https://quotiflex.com/videos/bilingual-quotation-documents): the customer document in two languages, built from the quote, with prices locked to the quote (1:30)
 - [Discount approvals with a reason, decided in minutes](https://quotiflex.com/videos/discount-approval-workflow): a discount below the margin floor asks for approval, and the approver sees its cost in money (1:24)
+- [Change product rules without a developer](https://quotiflex.com/videos/product-rules-without-a-developer): the product manager writes a rule in one sentence, the AI drafts it as a proposal, it is tried on a real quote, the effect on every open quote is shown before saving, and every quote owner is told (1:35)
 
 ## Company
 
